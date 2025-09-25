@@ -6,7 +6,6 @@
         if (!bookNumber) {
             bookNumber = 1
         }
-        // const bookNumber = 1
         let lessonsData = {}
         document.getElementById(`book-${bookNumber}`).classList.add('active');
 
@@ -18,7 +17,7 @@
         })
 
         async function loadData() {
-            const dataSrc = 'data.json';
+            const dataSrc = 'static/data.json';
             const dataRes = await fetch(dataSrc);
             lessonsData = await dataRes.json();
         }

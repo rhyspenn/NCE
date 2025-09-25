@@ -57,7 +57,7 @@
          * ------------------------------------------------- */
         function parseTime(tag) {
             const m = TIME_RE.exec(tag);
-            return m ? parseInt(m[1], 10) * 60 + parseFloat(m[2]) : 0;
+            return m ? parseInt(m[1], 10) * 60 + parseFloat(m[2]) -0.5 : 0;
         }
 
         /** -------------------------------------------------
@@ -65,9 +65,6 @@
          * ------------------------------------------------- */
         async function loadLrc() {
             const lrcRes = await fetch(lrcSrc);
-            // if (!lrcRes.ok) {
-            //     window.location.href = window.location.origin
-            // }
             const text = await lrcRes.text();
             const lines = text.split(/\r?\n/).filter(Boolean);
 
@@ -83,8 +80,7 @@
                 const start = parseTime(`[${match[1]}]`);
                 const [en, cn = ''] = match[2].split('|').map(s => s.trim());
 
-                // 计算结束时间：取下一行的 start，若无则使用音频时长（稍后补齐）
-                let end = null;
+                let end = 0;
                 for (let j = i + 1; j < lines.length; j++) {
                     const nxt = lines[j].match(LINE_RE);
                     if (nxt) {
@@ -119,7 +115,7 @@
          *  播放区间
          * ------------------------------------------------- */
         function playSegment(start, end) {
-            state.segmentEnd = end || audio.duration;
+            state.segmentEnd = end
             audio.currentTime = start;
             audio.play();
             state.activeIdx = -1;
@@ -153,7 +149,6 @@
 
         audio.addEventListener('timeupdate', () => {
             const cur = audio.currentTime;
-
             // 区间结束自动暂停
             if (state.segmentEnd && cur >= state.segmentEnd) {
                 audio.pause();
@@ -173,7 +168,6 @@
         // 初始化
         loadLrc().then(r => {
         });
-
 
     })
 })();
