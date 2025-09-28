@@ -32,6 +32,7 @@
                 let lessonNumber = index + 1
                 if (bookNumber === 1) {
                     lessonNumber = index * 2 + 1;
+                    lessonNumber = `${lessonNumber}&${lessonNumber+1}`;
                 }
                 const lessonElement = document.createElement('a');
                 lessonElement.href = `lesson.html#NCE${bookNumber}/${lesson.filename}`;
