@@ -15,6 +15,8 @@ body{
 #player {
     display: block; /* 变为块级元素 */
     margin: 0 auto; /* 左右自动外边距实现居中 */
+    width: 100%;
+    max-width: 500px;
 }
 
 

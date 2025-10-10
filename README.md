@@ -1,8 +1,15 @@
 # 新概念英语-全四册
 ## New Concept English
 ### 在线课文点读
+在线课文朗读，单句点读，随时随地在线学习。  
 
-在线课文朗读，单句点读，随时随地在线学习。
+Demo：[http://nce.ichochy.com](http://nce.ichochy.com)  
+
+--- 
+
+## 信息
+Blog：[http://ichochy.com](http://ichochy.com)  
+资源：https://github.com/tangx/New-Concept-English  
 
 ---
 
@@ -106,13 +113,19 @@
 3. **第三册**：重点在阅读、词汇和句型复杂度，培养复述和写作能力。
 4. **第四册**：进入英语原著阅读和学术表达层面，达到准母语水平。
 
+
 ---
 
-Site：[http://nce.ichochy.com](http://nce.ichochy.com)
+## 版权声明
+本网站的内容仅限个人学习、研究或欣赏之用，非商业用途。
 
-Blog：[http://ichochy.com](http://ichochy.com)
+内容源于互联网，我们不对内容的版权归属承担任何责任。  
+如您认为本网站上的任何内容侵犯了您的著作权或其他合法权益，请通过以下联系方式通知我们：
+联系邮箱：me@ichochy.com，我们将在收到有效通知后尽快核实并采取相应措施（如删除相关内容）。
 
-资源：https://github.com/tangx/New-Concept-English
+为尊重和保护著作权人的合法权益，请您支持正版，购买合法授权的教材或资源，避免使用未经授权的内容。
+
+本声明适用于本网站的所有内容，感谢您的理解与配合。
 
 ---
 
