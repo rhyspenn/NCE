@@ -7,7 +7,8 @@
         const INFO_RE = {
             album: /\[al:(.*)\]/,
             artist: /\[ar:(.*)\]/,
-            title: /\[ti:(.*)\]/
+            title: /\[ti:(.*)\]/,
+            by: /\[by:(.*)\]/
         };
 
         /** 读取 URL hash 并构造资源路径 */
@@ -28,6 +29,7 @@
         const bookTitleEl = document.getElementById('book-title');
         const bookImgEl = document.getElementById('book-img');
         const lessonTitleEl = document.getElementById('lesson-title');
+        const lessonLRCByEl = document.getElementById('lesson-lrc-by');
 
         /** 数据结构 */
         const state = {
@@ -35,6 +37,7 @@
             album: '',
             artist: '',
             title: '',
+            by: '',
             segmentEnd: 0,
             activeIdx: -1
         };
@@ -57,7 +60,7 @@
          * ------------------------------------------------- */
         function parseTime(tag) {
             const m = TIME_RE.exec(tag);
-            return m ? parseInt(m[1], 10) * 60 + parseFloat(m[2]) -0.5 : 0;
+            return m ? parseInt(m[1], 10) * 60 + parseFloat(m[2]) - 0.5 : 0;
         }
 
         /** -------------------------------------------------
@@ -71,7 +74,6 @@
             lines.forEach((raw, i) => {
                 const line = raw.trim();
                 const match = line.match(LINE_RE);
-
                 if (!match) {
                     parseInfo(line);
                     return;
@@ -101,14 +103,23 @@
             bookEl.href = bookScr;
             bookTitleEl.textContent = state.album;
             lessonTitleEl.textContent = state.title;
+            lessonLRCByEl.textContent = state.by;
 
-            content.innerHTML = state.data.map(
+            const sentencesHTML = state.data.map(
                 (item, idx) =>
                     `<div class="sentence" data-idx="${idx}">
                     <div class="en">${item.en}</div>
                     <div class="cn">${item.cn}</div>
                 </div>`
             ).join('');
+            const footerHTML = `
+                        <div class="end">
+                            <p>---谢谢点赞支持---</p>
+                            <p>❤️❤️❤️</p>
+                            <a target="_blank" href="https://ichochy.com"><p>By iChochy</p></a>
+                        </div>
+            `;
+            content.innerHTML = sentencesHTML + footerHTML;
         }
 
         /** -------------------------------------------------
