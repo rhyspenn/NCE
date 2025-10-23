@@ -8,8 +8,16 @@ Demo：[http://nce.ichochy.com](http://nce.ichochy.com)
 --- 
 
 ## 信息
-Blog：[http://ichochy.com](http://ichochy.com)  
-资源：https://github.com/tangx/New-Concept-English  
+Blog：[http://ichochy.com](http://ichochy.com)   
+GitHub：[https://github.com/ichochy/nce](https://github.com/ichochy/nce)   
+音频资源：[https://github.com/tangx/New-Concept-English](https://github.com/tangx/New-Concept-English)    
+
+---
+
+## 说明
+音频为美音，中文字幕为 [Gemini AI](https://aistudio.google.com) 生成。没有`一一核对`，会有一些错误和不足，欢迎大家指正和完善。
+
+自己还特意写了一个Python脚本（[iGSTT](https://ichochy.com/posts/shell/20251015.html)）实现中文翻译
 
 ---
 
