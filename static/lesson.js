@@ -90,7 +90,7 @@
                         break;
                     }
                 }
-                state.data.push({en, cn, start, end});
+                state.data.push({ en, cn, start, end });
             });
             render();
         }
@@ -142,7 +142,7 @@
             const cur = content.querySelector(`.sentence[data-idx="${idx}"]`);
             if (cur) {
                 cur.classList.add('active');
-                cur.scrollIntoView({behavior: 'smooth', block: 'center'});
+                cur.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
             state.activeIdx = idx;
         }
@@ -154,7 +154,7 @@
             const target = e.target.closest('.sentence');
             if (!target) return;
             const idx = Number(target.dataset.idx);
-            const {start, end} = state.data[idx];
+            const { start, end } = state.data[idx];
             playSegment(start, end);
         });
 
@@ -174,6 +174,36 @@
                 item => cur > item.start && (cur < item.end || !item.end)
             );
             if (idx !== -1) highlight(idx);
+        });
+
+        // 字幕显示控制
+        const subtitleModes = ['both', 'en-only', 'cn-only'];
+        const subtitleTexts = ['中英', 'EN', '中'];
+        let currentModeIndex = 0;
+
+        const subtitleToggleBtn = document.getElementById('subtitle-toggle');
+
+        subtitleToggleBtn.addEventListener('click', (e) => {
+            // 阻止事件冒泡和默认行为
+            e.preventDefault();
+            e.stopPropagation();
+
+            // 移除当前模式的 class
+            content.classList.remove('hide-cn', 'hide-en');
+
+            // 切换到下一个模式
+            currentModeIndex = (currentModeIndex + 1) % subtitleModes.length;
+            const currentMode = subtitleModes[currentModeIndex];
+
+            // 应用新模式
+            if (currentMode === 'en-only') {
+                content.classList.add('hide-cn');
+            } else if (currentMode === 'cn-only') {
+                content.classList.add('hide-en');
+            }
+
+            // 更新按钮文字
+            subtitleToggleBtn.textContent = subtitleTexts[currentModeIndex];
         });
 
         // 初始化

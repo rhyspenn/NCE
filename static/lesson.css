@@ -4,19 +4,61 @@ body {
     flex-direction: column;
 }
 
+/* 字幕切换按钮样式 */
+.book-header {
+    position: relative;
+}
+
+.subtitle-toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.subtitle-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+}
+
+.subtitle-toggle-btn:active {
+    transform: translateY(0);
+}
+
+/* 字幕显示控制 */
+.hide-cn .cn {
+    display: none;
+}
+
+.hide-en .en {
+    display: none;
+}
+
 #content {
     scroll-behavior: smooth;
-    flex: 1; /* 让 content 区域占据所有剩余空间 */
-    overflow-y: auto; /* 关键：当内容溢出时，启用垂直滚动 */
+    flex: 1;
+    /* 让 content 区域占据所有剩余空间 */
+    overflow-y: auto;
+    /* 关键：当内容溢出时，启用垂直滚动 */
     padding: 0 5%;
     min-height: 0;
 }
 
-.end{
+.end {
     padding: 10px;
 }
 
-.end p{
+.end p {
     text-align: center;
     font-size: 12px;
     color: #aaaaaa;
@@ -24,8 +66,10 @@ body {
 }
 
 #player {
-    display: block; /* 变为块级元素 */
-    margin: 0 auto; /* 左右自动外边距实现居中 */
+    display: block;
+    /* 变为块级元素 */
+    margin: 0 auto;
+    /* 左右自动外边距实现居中 */
     width: 100%;
     max-width: 500px;
 }
@@ -51,7 +95,8 @@ body {
 
 .sentence.active {
     color: #ffffff;
-    background: #3c45cc; /* 淡黄色高亮 */
+    background: #3c45cc;
+    /* 淡黄色高亮 */
     transform: translateX(8px);
     box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
 }

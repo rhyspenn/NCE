@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,35 +9,38 @@
     <link rel="stylesheet" href="static/lesson.css">
     <script src="static/lesson.js"></script>
 </head>
+
 <body>
-<div class="container">
-    <a href="index.html">
-        <div class="header">
-            <h1>新概念英语</h1>
-            <p>New Concept English</p>
-        </div>
-    </a>
-</div>
-<div class="book-container">
-    <a id="book" href="book.html">
-        <header class="book-header">
-            <img id="book-img" src="images/NCE1.jpg" alt="First Things First">
-            <div class="book-title">
-                <h3 id="book-title"></h3>
-                <hr>
-                <h4 id="lesson-title"></h4>
-                <p id="lesson-lrc-by"></p>
+    <div class="container">
+        <a href="index.html">
+            <div class="header">
+                <h1>新概念英语</h1>
+                <p>New Concept English</p>
             </div>
-        </header>
-    </a>
-    <hr>
-    <main id="content"></main>
-</div>
-<footer>
-    <audio id="player" controls="controls"></audio>
-    <hr>
-    <a target="_blank" href="https://github.com/ichochy/nce">© 2025 iChochy</a>
-</footer>
+        </a>
+    </div>
+    <div class="book-container">
+        <a id="book" href="book.html">
+            <header class="book-header">
+                <img id="book-img" src="images/NCE1.jpg" alt="First Things First">
+                <div class="book-title">
+                    <h3 id="book-title"></h3>
+                    <hr>
+                    <h4 id="lesson-title"></h4>
+                    <p id="lesson-lrc-by"></p>
+                </div>
+                <button id="subtitle-toggle" class="subtitle-toggle-btn" title="切换字幕显示">中英</button>
+            </header>
+        </a>
+        <hr>
+        <main id="content"></main>
+    </div>
+    <footer>
+        <audio id="player" controls="controls"></audio>
+        <hr>
+        <a target="_blank" href="https://github.com/ichochy/nce">© 2025 iChochy</a>
+    </footer>
 
 </body>
+
 </html>
